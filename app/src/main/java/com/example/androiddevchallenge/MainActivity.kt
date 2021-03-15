@@ -17,18 +17,14 @@ package com.example.androiddevchallenge
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
-import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.ContentAlpha
+import androidx.compose.material.ContentAlpha.medium
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
@@ -45,14 +41,13 @@ import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.data.dummyThemes
 import com.example.androiddevchallenge.ui.screen.HomeScreen
 import com.example.androiddevchallenge.ui.screen.UndefinedTab
-import com.example.androiddevchallenge.ui.theme.BloomImage
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyTheme {
+            MyTheme(darkTheme = true) {
                 MyApp()
             }
         }
@@ -60,7 +55,8 @@ class MainActivity : BaseActivity() {
 }
 
 private enum class BloomTabs(
-    val title: String, val icon: ImageVector
+    val title: String,
+    val icon: ImageVector
 ) {
     Home("Home", Icons.Default.Home),
     Favorites("Favorites", Icons.Default.FavoriteBorder),
@@ -84,13 +80,14 @@ fun MyApp() {
         bottomBar = {
             BottomNavigation(
                 modifier = Modifier.height(56.dp),
-                elevation = 16.dp
+                elevation = 16.dp,
+                backgroundColor = MaterialTheme.colors.primary
             ) {
                 tabs.forEach { navItem ->
                     BottomNavigationItem(
                         selected = selectedTab == navItem,
                         selectedContentColor = MaterialTheme.colors.onBackground,
-                        unselectedContentColor = MaterialTheme.colors.onBackground.copy(alpha = ContentAlpha.medium),
+                        unselectedContentColor = MaterialTheme.colors.onBackground.copy(alpha = medium),
                         label = { Text(navItem.title) },
                         icon = {
                             Icon(

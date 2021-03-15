@@ -1,56 +1,46 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge.ui.screen
 
-import android.graphics.drawable.shapes.Shape
-import android.util.Log
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.material.TextButton
-import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import coil.size.Scale
-import com.example.androiddevchallenge.MyApp
-import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.BloomPasswordTextField
-import com.example.androiddevchallenge.ui.theme.BloomPrimaryButton
 import com.example.androiddevchallenge.ui.theme.BloomSecondaryButton
 import com.example.androiddevchallenge.ui.theme.BloomTextField
 import com.example.androiddevchallenge.ui.theme.MyTheme
-import com.example.androiddevchallenge.ui.theme.pink900
 import com.example.androiddevchallenge.ui.theme.typography
-import com.example.androiddevchallenge.ui.theme.white
-import dev.chrisbanes.accompanist.coil.CoilImage
 
 @Composable
 fun LoginScreen(
@@ -110,33 +100,9 @@ fun LoginScreen(
                 append(".")
             }
 
-//            ClickableText(
-//                text = "123",
-//                onTextLayout = {textLayoutResult -> textLayoutResult.align }
-//            )
-
-//            Text(
-//                text = annotatedText,
-//                style = MaterialTheme.typography.body2,
-//                textAlign = Alignment.CenterHorizontally,
-//                modifier = Modifier
-//                    .fillMaxWidth()
-//                    .paddingFromBaseline(top = 24.dp, bottom = 16.dp)
-//                    .clickable {
-//                        annotatedText.getStringAnnotations(tag = "link", start = offset, end = offset)
-//                        .firstOrNull()?.let { annotation ->
-//                            // If yes, we log its value
-//                            if (annotation.item.equals("tnc")) {
-//                                onTermsOfUseClicked()
-//                            } else if (annotation.item.equals("pp")) {
-//                                onPrivacyPolicyClicked()
-//                            }
-//                        } },
-//            )
-
             ClickableText(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .wrapContentWidth()
                     .paddingFromBaseline(top = 24.dp),
                 text = annotatedText1,
                 style = MaterialTheme.typography.body2,
@@ -175,7 +141,6 @@ fun LoginScreen(
                         }
                 }
             )
-
 
             BloomSecondaryButton(
                 isDarkTheme = isDarkTheme,

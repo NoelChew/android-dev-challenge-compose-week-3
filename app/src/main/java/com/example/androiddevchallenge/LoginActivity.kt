@@ -19,20 +19,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.compose.setContent
-import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.material.darkColors
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.ui.screen.LoginScreen
-import com.example.androiddevchallenge.ui.screen.WelcomeScreen
-import com.example.androiddevchallenge.ui.theme.BloomImage
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class LoginActivity : BaseActivity() {
@@ -46,14 +35,15 @@ class LoginActivity : BaseActivity() {
                     },
                     onTermsOfUseClicked = {
                         Toast.makeText(this, "Terms of Use clicked.", Toast.LENGTH_SHORT).show()
-                    }, onPrivacyPolicyClicked = {
+                    },
+                    onPrivacyPolicyClicked = {
                         Toast.makeText(this, "Privacy Policy clicked.", Toast.LENGTH_SHORT).show()
-                    })
+                    }
+                )
             }
         }
     }
 }
-
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable

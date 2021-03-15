@@ -26,9 +26,9 @@ val white = Color(0xFFFFFFFF)
 val white150 = Color(0x26FFFFFF)
 val white850 = Color(0xD9FFFFFF)
 val gray = Color(0xFF232323)
+val gray2 = Color(0xFF2E2E2E)
 
 val welcomeBgTintLight = Color(0xFFFEFBFB)
 val welcomeBgTintDark = Color(0xFF4C5349)
 val leaveTintLight = Color(0xFF2E352B)
 val leaveTintDark = Color(0xFFFFF1F1)
-
