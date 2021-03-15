@@ -16,7 +16,7 @@ Have been using Android Views for many years. Apart from a brief experiment with
 <img src="/results/screenshot_2.png" width="260">&emsp;<img src="/results/screenshot_2_dark.png" width="260">
 <img src="/results/screenshot_3.png" width="260">&emsp;<img src="/results/screenshot_3_dark.png" width="260">
 
-[Video](https://github.com/noelchew/android-dev-challenge-compose-week-3/results/video.mp4)
+[Video](https://github.com/NoelChew/android-dev-challenge-compose-week-3/blob/main/results/video.mp4)
 
 ## License
 ```
