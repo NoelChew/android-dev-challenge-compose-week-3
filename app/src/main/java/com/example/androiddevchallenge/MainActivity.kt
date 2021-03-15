@@ -47,7 +47,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyTheme(darkTheme = true) {
+            MyTheme() {
                 MyApp()
             }
         }
